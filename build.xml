@@ -1,0 +1,43 @@
+
+<project name="proxy_pop3" basedir=".">
+	
+	<property name="src.dir"     value="src"/>
+	
+	<property name="build.dir"   value="build"/>
+	<property name="classes.dir" value="${build.dir}/classes"/>
+	<property name="jar.dir"     value="${build.dir}/jar"/>
+	
+	<property name="main-class"  value="pop3.ProxyServer"/>
+	
+    <target name="clean">
+        <delete dir="${build.dir}"/>
+    </target>
+	
+	<target name="init">
+		<mkdir dir="${classes.dir}"/>
+		<mkdir dir="${jar.dir}" />
+	</target>
+	
+	<path id="compile.classpath">
+		<fileset dir="librarys" includes="**/*.jar"/>
+	</path>
+
+	<target name="compile" depends="init" >
+	    <javac srcdir="src" destdir="${classes.dir}">
+	        <classpath refid="compile.classpath"/>
+	    </javac>
+	</target>
+
+    <target name="jar" depends="compile">
+        <jar destfile="${jar.dir}/proxy.jar" basedir="${classes.dir}">
+            <manifest>
+                <attribute name="Main-Class" value="${main-class}"/>
+            </manifest>
+        </jar>
+    </target>
+
+    <target name="run" depends="compile,jar">
+        <java jar="${jar.dir}/proxy.jar" fork="true"/>
+    </target>
+
+</project>

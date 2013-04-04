@@ -1,0 +1,41 @@
+<proxyServerConfiguration>
+
+	<defaultServer>localhost</defaultServer>
+
+	<administrators>
+		<administrator>
+			<username>farolfo</username>
+			<password>123465</password>
+		</administrator>
+		<administrator>
+			<username>jmozzino</username>
+			<password>123465</password>
+		</administrator>
+		<administrator>
+			<username>tmehdi</username>
+			<password>123465</password>
+		</administrator>
+	</administrators>
+	<restrictedIps>
+		<ip>124.125.123.2</ip>
+		<ip>124.1.123.2</ip>
+		<subnet>125.21.0.0/16</subnet>
+	</restrictedIps>
+	
+	<user>
+		<username>farolfo</username>
+		<server>pop3.alu.itba.edu.ar</server>
+	</user>
+	<user>
+		<username>tmehdi</username>
+		<server>pop3.alu.itba.edu.ar</server>
+	</user>
+	<user>
+		<username>jmozzino</username>
+		<server>pop3.alu.itba.edu.ar</server>
+	</user>
+	
+	<transformation>java -jar transformations/ImageRotation.jar</transformation>
+
+
+</proxyServerConfiguration>
