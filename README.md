@@ -1,19 +1,30 @@
-Cmpilacion:
-	Para la compilacion se ejecuta ant compile
-Jar:
-	Para generar el jar se ejecuta ant jar el cual ejecuta ante ant compile
-Ejecucion:
-	Para correrlo se ejecuta java -jar con el path del jar "proxy.jar" generado en ~build/jar
-	Soporta los parametroe -p -d -c siendo respectivamente source port, destination port y el 
-	puerto de configuracion remota. Si -p no se asigna toma por default 3000, si -d no se asigna
+PROXY POP3
+-----------------------------------------------------------------------
+Desarrollado para la catedra de Protocolos de Comunicacion del ITBA junto a Jorge Mozzino y Tomas Mehdi.
+
+Compilacion
+-----------------------------------------------------------------------
+	Para la compilacion se ejecuta 
+
+	$> ant compile
+
+-----------------------------------------------------------------------
+Ejecucion
+
+	Para correrlo se ejecuta java -jar con el path del jar "proxy.jar" generado en ~build/jar.
+	
+	Soporta los parametroe -p -d -c siendo estos, respectivamente, source port, destination port y el puerto de configuracion remota. 
+
+	Si -p no se asigna toma por default 3000, si -d no se asigna
 	toma por default 110, si -c no se asigna toma por default 51914
 
-
---Configuracion inicial--
+-----------------------------------------------------------------------
+Configuracion inicial
 
   Para configurar su proxy usted debe configurar el archivo "conf.xml", el cual se debe encontrar en el directorio donde se encuentra la aplicacion.
 
   La configuracion minima necesaria para el funcionamiento del proxy requiere que se setee un pop3 server default en el archivo de configuracion.
+
   Por ejemplo, podriamos tener:
 
   <proxyServerConfiguration>
